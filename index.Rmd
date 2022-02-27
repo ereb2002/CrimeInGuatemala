@@ -1,0 +1,93 @@
+---
+title       : Crime in Guatemala
+author      : Ronaldo Echeverria Bardales
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax, quiz, bootstrap]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+
+---
+
+## Descripition
+
+This is a small exploration of the crimes reported by the National Civil Police in the Republic of Guatemala, this information was taken from the site https://www.ine.gob.gt/ine/estadisticas/bases-de-datos/hechos-delictivos/
+
+And can be viewed on the site https://ereb2002.shinyapps.io/crimeinguatemala/
+
+The variables considered are:
+* Incident department
+* Description of the crime
+* Crime date
+* Time of crime
+
+---  
+
+## Visualization
+
+You can display the information by dates.
+```{r nvd3plot2, results = 'asis', comment = NA, message = F, echo = F}
+library("dplyr")
+require("rCharts")
+library("tidyr")
+library("stringr")
+library("ggplot2")
+
+setwd(".")
+
+delitos <- read.csv("pnc_victimas_2016_2020.csv")
+dic_delitos <- read.csv("delito_guatemala.csv")
+dic_departamento <- read.csv("departamento_guatemala.csv")
+
+delitos <- inner_join(delitos, dic_delitos)
+delitos <- inner_join(delitos, dic_departamento)
+
+delitos$fecha <- as.Date(paste(delitos$anio_ocu, paste(str_pad(delitos$mes_ocu,width=2,pad="0"), str_pad(delitos$día_ocu,width=2,pad="0"), sep="-"),sep="-"))
+delitos$ocurrencia <- 1
+
+tabla_dia <-     delitos %>% filter(Departamento == 'Guatemala') %>% 
+      filter(Delito %in% c("Robo de vehículos","Robo de motocicletas")) %>% 
+      filter(fecha >= as.Date('2016-01-01') & fecha <= as.Date('2020-12-31')) %>%
+      group_by(Departamento, Delito, fecha) %>% summarise(Cantidad = sum(ocurrencia))
+
+    #plot(tabla_dia$fecha, tabla_dia$Cantidad, col=tabla_dia$Delito)
+  qplot(fecha, Cantidad, data=tabla_dia, colour = Delito)
+    
+```
+
+---
+
+## Visualization
+
+You can display the information by hours.
+```{r nvd3plot2.2, results = 'asis', comment = NA, message = F, echo = F, warning=F}
+tabla_hora <-     delitos %>% filter(Departamento == 'Guatemala') %>% 
+      filter(Delito %in% c("Robo de vehículos","Robo de motocicletas")) %>% 
+      filter(fecha >= as.Date('2016-01-01') & fecha <= as.Date('2020-12-31')) %>%
+      group_by(Departamento, Delito, hora_ocu) %>% summarise(Cantidad = sum(ocurrencia))
+
+    #plot(tabla_dia$fecha, tabla_dia$Cantidad, col=tabla_dia$Delito)
+  qplot(hora_ocu, Cantidad, data=tabla_hora, colour = Delito, xlim = c(0,24))
+    
+```
+
+---
+
+## Visualization
+
+```{r nvd3plot2.3, results = 'asis', comment = NA, message = F, echo = F, warning=F}
+tabla_hora <-     delitos %>% filter(Departamento == 'Guatemala') %>% 
+      filter(Delito %in% c("Robo de vehículos")) %>% 
+      filter(fecha >= as.Date('2016-01-01') & fecha <= as.Date('2020-12-31')) %>%
+      group_by(Departamento, Delito, hora_ocu) %>% summarise(Cantidad = sum(ocurrencia))
+
+prediccion <- lm(Cantidad ~ hora_ocu, data=tabla_hora)
+
+plot(tabla_hora$hora_ocu, tabla_hora$Cantidad, xlim = c(0,24))
+abline(prediccion)
+```
+
+
+
+
