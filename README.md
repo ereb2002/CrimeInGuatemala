@@ -27,20 +27,20 @@ The variables considered are:
 ## Visualization
 
 You can display the information by dates.
-![plot of chunk nvd3plot2](assets/fig/nvd3plot2-1.png)
+![plot of chunk nvd3plot2](nvd3plot2-1.png)
 
 ---
 
 ## Visualization
 
 You can display the information by hours.
-![plot of chunk nvd3plot2.2](assets/fig/nvd3plot2.2-1.png)
+![plot of chunk nvd3plot2.2](nvd3plot2.2-1.png)
 
 ---
 
 ## Visualization
 
-![plot of chunk nvd3plot2.3](assets/fig/nvd3plot2.3-1.png)
+![plot of chunk nvd3plot2.3](nvd3plot2.3-1.png)
 
 
 
