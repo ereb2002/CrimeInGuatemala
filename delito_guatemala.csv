@@ -1,0 +1,82 @@
+delito_com,Delito
+1,Homicidio por arma de fuego
+2,Homicidio por arma blanca
+3,Homicidio por arma contundente
+4,Homicidio por artefacto explosivo
+5,Homicidio por estrangulamiento
+6,Homicidio por linchamiento
+7,Lesiones por arma de fuego
+8,Lesiones por arma blanca
+9,Lesiones por arma contundente
+10,Lesiones por artefacto explosivo
+11,Lesiones por linchamiento
+15,Secuestro
+19,Robo a residencias
+20,Robo a comercios
+21,Hurto a comercios
+22,Robo de vehículos
+23,Robo de camiones/trailers con mercadería
+24,Robo de motocicletas
+27,Robo a bancos
+28,Robos a turistas extranjeros
+29,Robo a turistas nacionales
+30,Robo a peatones
+31,Robo a blindados
+32,Robo a buses urbanos
+33,Robo a buses extraurbanos
+35,Robo en iglesias
+36,Otros robos y hurtos
+69,Robo de armas de fuego
+71,Desaparecidos
+72,Extravío de armas de fuego
+73,Extorsión a bicitaxis
+74,Extorsión a persona
+75,Hurto de armas de fuego
+76,Hurto a buses extraurbanos
+77,Hurto a buses urbanos
+78,Hurto a iglesias
+79,Hurto de motocicletas
+80,Hurto a peatones
+81,Hurto a residencias
+82,Hurto a turistas extranjeros
+83,Hurto de vehículos
+84,Extorsión a centro carcelario
+85,Suicidio por artefacto explosivo
+86,Intento de suicidio por arma blanca
+87,Suicidio por arma de fuego
+88,Suicidio por asfixia
+89,Suicidio por intoxicación de insecticida
+90,Intento de suicidio por intoxicación de medicamentos
+91,Suicidio por otras intoxicaciones
+92,Suicidio por politraumatismo
+93,Suicidio por intoxicación de envenenamiento
+94,Extorsión a buses extraurbanos
+95,Extorsión a buses urbanos
+96,Extorsión a centro educativo
+97,Extorsión a comercios
+98,Extorsión a municipalidad
+99,Extorsión a taxis
+100,Extorsión a transporte escolar
+101,Extorsión a transporte pesado
+102,Extorsión a mototaxis
+103,Extorsión a iglesias
+104,Extorsión a residencias
+105,Otras extorsiones
+106,Intento de suicidio por arma de fuego
+107,Intento de suicidio por asfixia
+108,Intento de suicidio por intoxicación de insecticida
+109,Intento de suicidio por otras intoxicaciones
+110,Intento de suicidio por politraumatismo
+111,Suicidio por arma blanca
+112,Intento de suicidio por intoxiación de envenenamiento
+113,Suicidio por intoxicación de medicamentos
+114,Extorsión a instituciones
+115,Hurto a bancos
+116,Suicidio por causa ignorada
+117,Intento de suicidio por quemadura
+119,Intento de suicidio por intoxicación alcohólica
+120,Suicidio por intoxicación alcohólica
+121,Intento de suicidio por causa ignorada
+122,Suicidio por arma contundente
+123,Intento de suicidio por arma contundente
+126,Lesiones por vapuleo
