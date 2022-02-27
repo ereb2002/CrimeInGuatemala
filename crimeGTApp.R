@@ -3,12 +3,13 @@ library("dplyr")
 library("ggplot2")
 library("tidyr")
 library("stringr")
+library("plotly")
 
-setwd("/home/ron/Documentos/DataScience/CrimeInGuatemala/")
+#setwd(".")
 
-delitos <- read.csv("pnc_victimas_2016_2020.csv")
-dic_delitos <- read.csv("delito_guatemala.csv")
-dic_departamento <- read.csv("departamento_guatemala.csv")
+delitos <- read.csv("https://raw.githubusercontent.com/ereb2002/CrimeInGuatemala/main/pnc_victimas_2016_2020.csv")
+dic_delitos <- read.csv("https://raw.githubusercontent.com/ereb2002/CrimeInGuatemala/main/delito_guatemala.csv")
+dic_departamento <- read.csv("https://raw.githubusercontent.com/ereb2002/CrimeInGuatemala/main/departamento_guatemala.csv")
 
 delitos <- inner_join(delitos, dic_delitos)
 delitos <- inner_join(delitos, dic_departamento)
